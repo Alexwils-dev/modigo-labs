@@ -1,4 +1,4 @@
-def apply_discount(price, discount_percent=10):
-    return round(price - (price * discount_percent / 100), 2)
+def create_greeting(recipient_name, sender_name="A Friend", closing="Best wishes"):
+    return (f"Dear {recipient_name}, {closing}! From, {sender_name}.")
 
-print(apply_discount(100))
+print(create_greeting("Ada"))
