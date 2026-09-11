@@ -1,9 +1,3 @@
-def has_all_vowels(word):
-    required = {"a", "e", "i", "o", "u"}
-    word = word.lower()
-    # TODO: build a set of vowels actually found in `word`,
-    # then check if it contains all of `required`
-    found = {ch for ch in word if ch in required}
-    
-    return required.issubset(found)
-print(has_all_vowels("education"))
+def swap_tuple(pair):
+    return (pair[1], pair[0])
+print(swap_tuple((1, 2)))
