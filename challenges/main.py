@@ -1,3 +1,8 @@
-def swap_tuple(pair):
-    return (pair[1], pair[0])
-print(swap_tuple((1, 2)))
+def compare_hobbies(person1_hobbies, person2_hobbies):
+    return {
+        "shared": person1_hobbies & person2_hobbies,
+        "only_person1": person1_hobbies - person2_hobbies,
+        "only_person2": person2_hobbies - person1_hobbies
+    }
+
+print((["reading", "coding"]))
