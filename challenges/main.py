@@ -1,5 +1,4 @@
-def count_unique_visitors(visitors):
-    unique_visitors = set(visitors)
+def same_point(point1, point2):
+    return point1 == point2
 
-    return len(unique_visitors)
-print(count_unique_visitors([]))
+print(same_point(1, 2), (1, 2))
