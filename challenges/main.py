@@ -1,8 +1,5 @@
-def compare_hobbies(person1_hobbies, person2_hobbies):
-    return {
-        "shared": person1_hobbies & person2_hobbies,
-        "only_person1": person1_hobbies - person2_hobbies,
-        "only_person2": person2_hobbies - person1_hobbies
-    }
+def merge_tags(tags1, tags2):
+    merged = tags1 | tags2
+    return merged
 
-print((["reading", "coding"]))
+print(merge_tags({"python", "web"}, {"web", "css"}))
