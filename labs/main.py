@@ -1,4 +1,5 @@
-def create_greeting(recipient_name, sender_name="A Friend", closing="Best wishes"):
-    return (f"Dear {recipient_name}, {closing}! From, {sender_name}.")
-
-print(create_greeting("Ada"))
+def format_line_item(description, amount, tax_rate=7.5, currency="$"):
+    total = round(amount + (amount * tax_rate / 100), 2)
+    return (f"{description}: {currency}{total}")
+    
+print(format_line_item("Notebook", 10))
