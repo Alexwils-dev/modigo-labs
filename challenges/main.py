@@ -1,5 +1,5 @@
-def merge_tags(tags1, tags2):
-    merged = tags1 | tags2
-    return merged
+def count_unique_visitors(visitors):
+    unique_visitors = set(visitors)
 
-print(merge_tags({"python", "web"}, {"web", "css"}))
+    return len(unique_visitors)
+print(count_unique_visitors([]))
