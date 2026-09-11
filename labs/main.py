@@ -1,4 +1,4 @@
-def power_of(base, exponent=2):
-    return base ** exponent
-    # TODO: return base raised to the power of exponent
-print(power_of(5))
+def apply_discount(price, discount_percent=10):
+    return round(price - (price * discount_percent / 100), 2)
+
+print(apply_discount(100))
