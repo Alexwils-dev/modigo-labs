@@ -1,4 +1,4 @@
-def apply_discount(price, discount_percent=10):
-    return round(price - (price * discount_percent / 100), 2)
-
-print(apply_discount(100, 20))
+def power_of(base, exponent=2):
+    return base ** exponent
+    
+print(power_of(5))
