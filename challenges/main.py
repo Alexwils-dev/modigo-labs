@@ -1,7 +1,11 @@
-def path_hits_blocked(blocked, path):
-    for position in path:
-        if position in blocked:
-            return True
+def dedupe_preserve_order(items):
+    seen = set()
+    result = []
 
-    return False
-print(path_hits_blocked({(1,1), (2,2)}, [(0,0), (1,1)]))
+    for item in items:
+        if item not in seen:
+            seen.add(item)
+            result.append(item)
+    return result
+
+print(dedupe_preserve_order([3, 1, 3, 2, 1]))
