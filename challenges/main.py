@@ -1,4 +1,7 @@
-def create_greeting(recipient_name, sender_name="A Friend", closing="Best wishes"):
-    return (f"Dear {recipient_name}, {closing}! From, {sender_name}.")
+def path_hits_blocked(blocked, path):
+    for position in path:
+        if position in blocked:
+            return True
 
-print(create_greeting("Ada"))
+    return False
+print(path_hits_blocked({(1,1), (2,2)}, [(0,0), (1,1)]))
