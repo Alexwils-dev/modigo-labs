@@ -1,4 +1,4 @@
-def power_of(base, exponent=2):
-    return base ** exponent
-    
-print(power_of(5))
+def create_greeting(recipient_name, sender_name="A Friend", closing="Best wishes"):
+    return (f"Dear {recipient_name}, {closing}! From, {sender_name}.")
+
+print(create_greeting("Ada"))
