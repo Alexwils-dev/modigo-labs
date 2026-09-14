@@ -1,11 +1,4 @@
-def total_scores(rounds):
-    totals = {}
-    for round_scores in rounds:
-        for player, points in round_scores.items():
-            if player not in totals:
-                totals[player] = 0
+def apply_discount(price, discount_percent=10):
+    return round(price - (price * discount_percent / 100), 2)
 
-            totals[player] += points
-    return totals
-
-print(total_scores([{"Ada": 5, "Bola": 3}, {"Ada": 2, "Bola": 4}]))
+print(apply_discount(100, 20))
