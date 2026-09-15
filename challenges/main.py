@@ -1,11 +1,11 @@
-def dedupe_preserve_order(items):
-    seen = set()
-    result = []
+def list_average(numbers):
+    if not numbers:
+        return 0
+    total = 0
+    
+    for num in numbers:
+        total += num
+    average = total / len(numbers)
 
-    for item in items:
-        if item not in seen:
-            seen.add(item)
-            result.append(item)
-    return result
-
-print(dedupe_preserve_order([3, 1, 3, 2, 1]))
+    return round(average, 2)
+print(list_average([2, 4, 6]))
