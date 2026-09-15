@@ -1,22 +1,11 @@
-def analyze_survey(responses):
-    if not responses:
-        return {"tally": {}, "most_popular": None}
+def count_items(items):
+    counts = {}
 
-    tally = {}
+    for item in items:
+        if item not in counts:
+            counts[item] = 0
+        counts[item] += 1
 
-    for color in responses:
-        if color not in tally:
-            tally[color] = 0
-        tally[color] += 1
-            
+    return counts
 
-    most_popular = None
-    highest_count = 0
-    
-    for color, count in tally.items():
-        if count > highest_count:
-            highest_count = count
-            most_popular = color
-
-    return {"tally": tally, "most_popular": most_popular}
-print(analyze_survey(["red", "blue", "red", "green"]))
+print(count_items(["apple", "banana", "apple"]))
