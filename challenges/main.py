@@ -1,11 +1,11 @@
-def list_average(numbers):
-    if not numbers:
+def count_unique_coordinates(coordinates):
+    if not coordinates:
         return 0
-    total = 0
-    
-    for num in numbers:
-        total += num
-    average = total / len(numbers)
 
-    return round(average, 2)
-print(list_average([2, 4, 6]))
+    unique = []
+    for coord in coordinates:
+        if coord not in unique:
+            unique.append(coord)
+    return len(unique)
+
+print(count_unique_coordinates([(0,0), (1,1), (0,0)]))
