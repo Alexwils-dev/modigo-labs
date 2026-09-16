@@ -1,9 +1,6 @@
-def find_longest_word(words):
-    longest = words[0]
+def swap_values(a, b):
+    new_a = b
+    new_b = a
+    return (b, a)
 
-    for word in words:
-        if len(word) > len(longest):
-            longest = word
-
-    return longest
-print(find_longest_word(["same", "size"]))
+print(swap_values("hi", "bye"))
