@@ -1,6 +1,8 @@
-def swap_values(a, b):
-    new_a = b
-    new_b = a
-    return (b, a)
+def double_values(numbers):
+    doubled = []
 
-print(swap_values("hi", "bye"))
+    for number in numbers:
+        doubled.append(number * 2)
+
+    return doubled
+print(double_values([1, 2, 3]))
