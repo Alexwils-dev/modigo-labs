@@ -1,8 +1,9 @@
-def split_bill(bill_amount, tip_percent, people):
-    tip_amount = bill_amount * tip_percent / 100
-    grand_total = bill_amount + tip_amount
-    each_person_share = grand_total / people
+def find_longest_word(words):
+    longest = words[0]
 
-    return round(each_person_share, 2)
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
 
-print(split_bill(100, 10, 2))
+    return longest
+print(find_longest_word(["same", "size"]))
