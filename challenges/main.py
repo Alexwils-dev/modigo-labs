@@ -1,10 +1,8 @@
-def remove_duplicates(items):
+def split_bill(bill_amount, tip_percent, people):
+    tip_amount = bill_amount * tip_percent / 100
+    grand_total = bill_amount + tip_amount
+    each_person_share = grand_total / people
 
-    result = []
+    return round(each_person_share, 2)
 
-    for item in items:
-        if item not in result:
-            result.append(item)
-
-    return result
-print(remove_duplicates([1, 2, 2, 3, 1]))
+print(split_bill(100, 10, 2))
