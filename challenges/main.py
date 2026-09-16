@@ -1,11 +1,10 @@
-def count_items(items):
-    counts = {}
+def remove_duplicates(items):
+
+    result = []
 
     for item in items:
-        if item not in counts:
-            counts[item] = 0
-        counts[item] += 1
+        if item not in result:
+            result.append(item)
 
-    return counts
-
-print(count_items(["apple", "banana", "apple"]))
+    return result
+print(remove_duplicates([1, 2, 2, 3, 1]))
