@@ -1,12 +1,14 @@
-def to_roman(number):
-    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-    symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
-    result = ""
+def has_conflict(meetings):
+    meetings.sort(key=lambda meeting: meeting[0])
+    
+    for i in range(len(meetings) - 1):
+        current_start, current_end = meetings[i]
+        next_start, next_end = meetings[i + 1]
 
-    for value, symbol in zip(values, symbols):
-        count = number // value
-        result += symbol * count
-        number = number % value
+        if current_end > next_start:
+            return True
 
-    return result
-print(to_roman(14))
+    return False
+
+print(has_conflict([(1, 3), (2, 4)]))
+print(has_conflict([(1, 3), (3, 5)]))
