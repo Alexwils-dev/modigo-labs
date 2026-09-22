@@ -1,14 +1,23 @@
-def has_conflict(meetings):
-    meetings.sort(key=lambda meeting: meeting[0])
-    
-    for i in range(len(meetings) - 1):
-        current_start, current_end = meetings[i]
-        next_start, next_end = meetings[i + 1]
+def find_index(numbers, target):
+    if not numbers:
+        return -1
 
-        if current_end > next_start:
-            return True
+    left = 0
+    right = len(numbers) -1
 
-    return False
+    while left <= right:
+        middle_index = (left + right) // 2
+        middle_value = numbers[middle_index]
 
-print(has_conflict([(1, 3), (2, 4)]))
-print(has_conflict([(1, 3), (3, 5)]))
+        if middle_value == target:
+            return middle_index
+
+        if middle_value < target:
+            left = middle_index + 1
+        else:
+            right = middle_index - 1
+    return -1
+
+
+
+print(find_index([1, 3, 5, 7, 9], 5))
