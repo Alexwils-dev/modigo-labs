@@ -1,10 +1,9 @@
-def sum_of_digits(number):
-    total = 0
-    number = str(number)
+def build_countdown(start):
+    countdown = []
 
-    for digit in number:
-        digit = int(digit)
-        total += digit
+    for number in range(start, 0, -1):
+        countdown.append(number)
 
-    return total
-print(sum_of_digits(123))
+    return countdown
+
+print(build_countdown(5))
