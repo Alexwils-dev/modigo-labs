@@ -1,10 +1,8 @@
-def multiplication_table(number, limit):
-    results = []
+def find_max(numbers):
+    largest = numbers[0]
 
-    for value in range(1, limit + 1):
-        result = number * value
-        results.append(result)
-
-    return results
-
-print(multiplication_table(3, 5))
+    for num in numbers:
+        if num > largest:
+            largest = num
+    return largest
+print(find_max([3, 7, 2]))
