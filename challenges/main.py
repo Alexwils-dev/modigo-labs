@@ -1,9 +1,9 @@
-def build_countdown(start):
-    countdown = []
+def count_character(text, target):
+    count = 0
 
-    for number in range(start, 0, -1):
-        countdown.append(number)
+    for char in text:
+        if char == target:
+            count += 1
+    return count
 
-    return countdown
-
-print(build_countdown(5))
+print(count_character("banana", "a"))
