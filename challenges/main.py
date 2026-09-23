@@ -1,9 +1,10 @@
-def count_character(text, target):
-    count = 0
+def multiplication_table(number, limit):
+    results = []
 
-    for char in text:
-        if char == target:
-            count += 1
-    return count
+    for value in range(1, limit + 1):
+        result = number * value
+        results.append(result)
 
-print(count_character("banana", "a"))
+    return results
+
+print(multiplication_table(3, 5))
