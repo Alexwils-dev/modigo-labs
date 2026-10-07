@@ -1,9 +1,20 @@
-def all_unique_tags(posts):
-    unique_tags = set()
+def top_words(text, n):
+    if text == "":
+        return []
 
-    for post in posts:
-        for tag in post["tags"]:
-            unique_tags.add(tag)
+    words = text.lower().split()
+    counts = {}
 
-    return unique_tags
-print(all_unique_tags([{"title": "A", "tags": ["python", "web"]}, {"title": "B", "tags": ["web", "css"]}]))
+    for word in words:
+        if word in counts:
+            counts[word] += 1
+
+        else:
+            counts[word] = 1
+
+    ranked_words = list(counts.items())
+    ranked_words.sort(key=lambda item: (-item[1], item[0]))
+
+    return ranked_words[:n]
+    
+print(top_words("the cat sat on the mat the cat ran", 2))
