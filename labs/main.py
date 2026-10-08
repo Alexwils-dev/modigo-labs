@@ -1,8 +1,18 @@
-def pair_names_and_ages(names, ages):
-    result = {}
+def top_words(text, n):
+    if text == "":
+        return []
 
-    for name, age in zip(names, ages):
-        result[name] = age
+    words = text.lower().split()
+    counts = {}
 
-    return result
-print(pair_names_and_ages(["Ada", "Bola"], [25, 30]))
+    for word in words:
+        if word in counts:
+            counts[word] += 1
+        else:
+            counts[word] = 1
+
+    ranked_words = list(counts.items())
+    ranked_words.sort(key=lambda item: (-item[1], item[0]))
+
+    return ranked_words[:n]
+print(top_words("the cat sat on the mat the cat ran", 2))
