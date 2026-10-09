@@ -1,21 +1,18 @@
-def can_make_recipe(pantry, recipe, substitutes):
-    for ingredient, required_quantity in recipe.items():
-        satisfied = False
+def top_words(text, n):
+    if text == "":
+        return []
 
-        if ingredient in pantry and pantry[ingredient] >= required_quantity:
-            satisfied = True
+    words = text.lower().split()
+    counts = {}
 
+    for word in words:
+        if word in counts:
+            counts[word] += 1
         else:
-            possible_substitutes = substitutes.get(ingredient, set())
+            counts[word] = 1
 
-            for substitute in possible_substitutes:
-                if substitute in pantry and pantry[substitute] >= required_quantity:
-                    satisfied = True
-                    break
+    ranked_words = list(counts.items())
+    ranked_words.sort(key=lambda item: (-item[1], item[0]))
+    return ranked_words[:n]
 
-        if not satisfied:
-            return False
-
-    return True
-
-print(can_make_recipe({"flour": 2, "sugar": 1}, {"flour": 1, "sugar": 1}, {}))
+print(top_words("the cat sat on the mat the cat ran", 2))
