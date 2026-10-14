@@ -1,8 +1,5 @@
-def pair_names_and_ages(names, ages):
-    result = {}
-    
-    for name, age in zip(names, ages):
-        result[name] = age
+def shared_hobbies(hobbies1, hobbies2):
+    return set(hobbies1) & set(hobbies2)
 
-    return result
-print(pair_names_and_ages(["Ada", "Bola"], [25, 30]))
+print(shared_hobbies(["reading", "chess"], ["chess", "cooking"]))
+print(shared_hobbies(["reading"], ["cooking"]))
