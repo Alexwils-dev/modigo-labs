@@ -1,10 +1,20 @@
-def find_phone_number(contacts, name):
-    contact_book = {}
+def filter_and_group(catalog, required_tags, excluded_tags):
+    result = {}
 
-    for contact_name, phone_number in contacts:
-        contact_book[contact_name] = phone_number
+    for product in catalog:
+        tags = product["tags"]
 
-    return contact_book.get(name, "Not found")
-    
-print(find_phone_number([("Ada", "0801"), ("Bola", "0802")], "Ada"))
-print(find_phone_number([("Ada", "0801")], "Chidi"))
+        if not required_tags.issubset(tags):
+            continue
+
+        if excluded_tags.intersection(tags):
+            continue
+
+        category = product["category"]
+        name = product["name"]
+
+        if category not in result:
+            result[category] = []
+
+        result[category].append(name)
+    return result
